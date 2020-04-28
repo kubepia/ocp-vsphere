@@ -33,10 +33,10 @@ data "vsphere_virtual_machine" "template" {
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 
-resource "vsphere_resource_pool" "resource_pool" {
-  name                    = var.cluster_id
-  parent_resource_pool_id = data.vsphere_compute_cluster.compute_cluster.resource_pool_id
-}
+# resource "vsphere_resource_pool" "resource_pool" {
+#   name                    = var.cluster_id
+#   parent_resource_pool_id = data.vsphere_compute_cluster.compute_cluster.resource_pool_id
+# }
 
 resource "vsphere_folder" "folder" {
   path          = var.cluster_id
@@ -56,7 +56,7 @@ module "compute" {
       var.compute_mac_address
   )
 
-  resource_pool_id      = vsphere_resource_pool.resource_pool.id
+  resource_pool_id      = data.vsphere_compute_cluster.compute_cluster.resource_pool_id
   datastore_id          = data.vsphere_datastore.datastore.id
   datacenter_id         = data.vsphere_datacenter.dc.id
   network_id            = data.vsphere_network.network.id
