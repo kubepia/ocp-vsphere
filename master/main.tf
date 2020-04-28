@@ -1,7 +1,6 @@
 locals {
   bootstrap_fqdns     = ["bootstrap-0.${var.cluster_domain}"]
   control_plane_fqdns = [for idx in range(var.control_plane_count) : "master-${idx}.${var.cluster_domain}"]
-  compute_fqdns       = [for idx in range(var.compute_count) : "worker-${idx}.${var.cluster_domain}"]
 }
 
 provider "vsphere" {
@@ -47,7 +46,7 @@ resource "vsphere_folder" "folder" {
 }
 
 module "bootstrap" {
-  source = "./vm"
+  source = "../vm"
 
   ignition = file(var.bootstrap_ignition_path)
 
@@ -74,7 +73,7 @@ module "bootstrap" {
 }
 
 module "control_plane" {
-  source = "./vm"
+  source = "../vm"
 
   ignition = file(var.control_plane_ignition_path)
 
