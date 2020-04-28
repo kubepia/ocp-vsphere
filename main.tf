@@ -1,7 +1,7 @@
 locals {
   bootstrap_fqdns     = ["bootstrap-0.${var.cluster_domain}"]
-  control_plane_fqdns = [for idx in range(var.control_plane_count) : "control-plane-${idx}.${var.cluster_domain}"]
-  compute_fqdns       = [for idx in range(var.compute_count) : "compute-${idx}.${var.cluster_domain}"]
+#   control_plane_fqdns = [for idx in range(var.control_plane_count) : "control-plane-${idx}.${var.cluster_domain}"]
+#   compute_fqdns       = [for idx in range(var.compute_count) : "compute-${idx}.${var.cluster_domain}"]
 }
 
 provider "vsphere" {
@@ -51,9 +51,10 @@ module "bootstrap" {
 
   ignition = file(var.bootstrap_ignition_path)
 
-  hostnames_ip_addresses = {
-      local.bootstrap_fqdns = var.bootstrap_ip_address
-  }
+  hostnames_ip_addresses = zipmap(
+      local.bootstrap_fqdns,
+        var.bootstrap_ip_address
+  )
 #   zipmap(
 #     local.bootstrap_fqdns,
 #     module.ipam_bootstrap.ip_addresses

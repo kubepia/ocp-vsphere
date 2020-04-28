@@ -86,6 +86,6 @@ variable "bootstrap_complete" {
 }
 
 variable "bootstrap_ip_address" {
-  type    = string
-  default = ""
+  type    = list(string)
+  default = []
 }
