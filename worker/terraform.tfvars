@@ -27,7 +27,7 @@ compute_ignition_path="../worker.ign"
 # compute_mac_address = []
 compute_mac_address = ["00:50:56:be:eb:5f","00:50:56:be:ca:5b","00:50:56:be:05:ac"]
 compute_cpu=16
-compute_mem=32763
+compute_mem=16384
 
 
 
