@@ -14,7 +14,7 @@ compute_count = 0
 
 
 bootstrap_ignition_path="./append.ign"
-boostrap_mac_address = ["00:50:56:be:01:32"]
+bootstrap_mac_address = ["00:50:56:be:01:32"]
 bootstrap_cpu=8
 bootstrap_mem=16384
 
