@@ -95,3 +95,27 @@ variable "bootstrap_mem" {
   type    = number
   default = 16384
 }
+
+// control_plane
+variable "control_plane_cpu" {
+  type    = number
+  default = 8
+}
+
+variable "control_plane_mem" {
+  type    = number
+  default = 16384
+}
+
+
+// compute node
+variable "compute_cpu" {
+  type    = number
+  default = 8
+}
+
+variable "compute_mem" {
+  type    = number
+  default = 16384
+}
+
