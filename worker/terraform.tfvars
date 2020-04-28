@@ -9,8 +9,8 @@ vsphere_datacenter = "NX-DC"
 vsphere_datastore = "VMware-NFS"
 vm_template = "rhcos"
 machine_cidr = "10.40.89.0/24"
-control_plane_count = 3
-compute_count = 0
+control_plane_count = 0
+compute_count = 3
 
 
 # bootstrap_ignition_path="./append.ign"
@@ -26,8 +26,8 @@ compute_count = 0
 compute_ignition_path="../worker.ign"
 # compute_mac_address = []
 compute_mac_address = ["00:50:56:be:eb:5f","00:50:56:be:ca:5b","00:50:56:be:05:ac"]
-compute_cpu=8
-compute_mem=16384
+compute_cpu=16
+compute_mem=32763
 
 
 
