@@ -3,7 +3,7 @@ locals {
 }
 
 data "ignition_file" "hostname" {
-  for_each = var.hostnames_ip_addresses
+  for_each = var.hostnames_mac_addresses
 
   filesystem = "root"
   path       = "/etc/hostname"
@@ -33,7 +33,7 @@ data "ignition_file" "hostname" {
 # }
 
 data "ignition_config" "ign" {
-  for_each = var.hostnames_ip_addresses
+  for_each = var.hostnames_mac_addresses
 
   append {
     source = local.ignition_encoded
