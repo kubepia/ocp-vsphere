@@ -53,7 +53,7 @@ module "bootstrap" {
 
   hostnames_ip_addresses = zipmap(
       local.bootstrap_fqdns,
-        var.bootstrap_ip_address
+      var.bootstrap_ip_address
   )
 #   zipmap(
 #     local.bootstrap_fqdns,
