@@ -51,7 +51,7 @@ module "bootstrap" {
 
   ignition = file(var.bootstrap_ignition_path)
 
-  hostnames_ip_addresses = zipmap(
+  hostnames_mac_addresses = zipmap(
       local.bootstrap_fqdns,
       var.bootstrap_mac_address
   )
@@ -78,7 +78,7 @@ module "control_plane" {
 
   ignition = file(var.control_plane_ignition_path)
 
-  hostnames_ip_addresses = zipmap(
+  hostnames_mac_addresses = zipmap(
       local.control_plane_fqdns,
       var.control_plane_mac_address
   )
