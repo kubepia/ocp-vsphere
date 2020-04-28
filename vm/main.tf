@@ -1,5 +1,5 @@
 resource "vsphere_virtual_machine" "vm" {
-  for_each = var.hostnames_ip_addresses
+  for_each = var.hostnames_mac_addresses
 
   name = element(split(".", each.key), 0)
 
@@ -17,12 +17,12 @@ resource "vsphere_virtual_machine" "vm" {
   network_interface {
     network_id = var.network_id
     use_static_mac="true"
-    mac_address ="00:50:56:be:01:32"
+    mac_address = var.hostnames_mac_addresses[count.index].value
   }
   
   disk {
     label            = "disk0"
-    size             = 60200
+    size             = 200
     thin_provisioned = var.disk_thin_provisioned
   }
 

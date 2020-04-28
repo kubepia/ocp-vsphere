@@ -43,10 +43,6 @@ variable "vm_network" {
   default     = "VM Network"
 }
 
-variable "vm_dns_addresses" {
-  type    = list(string)
-  default = ["1.1.1.1", "9.9.9.9"]
-}
 
 /////////
 // OpenShift cluster variables
@@ -88,4 +84,14 @@ variable "bootstrap_complete" {
 variable "bootstrap_ip_address" {
   type    = list(string)
   default = []
+}
+
+variable "bootstrap_cpu" {
+  type    = number
+  default = 8
+}
+
+variable "bootstrap_mem" {
+  type    = number
+  default = 16384
 }

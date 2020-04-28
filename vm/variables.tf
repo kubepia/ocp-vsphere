@@ -1,4 +1,4 @@
-variable "hostnames_ip_addresses" {
+variable "hostnames_mac_addresses" {
   type = map(string)
 }
 
@@ -34,6 +34,7 @@ variable "datastore_id" {
 variable "network_id" {
   type = string
 }
+
 
 variable "cluster_domain" {
   type = string
