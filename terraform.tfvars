@@ -1,4 +1,4 @@
-cluster_id = "hco"
+cluster_id = "hcp"
 cluster_domain = "hcp.darumtech.net"
 base_domain = "darumtech.net"
 vsphere_server = "192.168.0.70"

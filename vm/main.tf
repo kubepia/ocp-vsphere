@@ -17,7 +17,8 @@ resource "vsphere_virtual_machine" "vm" {
   network_interface {
     network_id = var.network_id
   }
-
+  use_static_mac="true"
+  mac_address ="00:50:56:be:01:32"
   disk {
     label            = "disk0"
     size             = 60200
