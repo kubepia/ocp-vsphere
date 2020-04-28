@@ -2,7 +2,7 @@ resource "vsphere_virtual_machine" "vm" {
 
   for_each = var.hostnames_mac_addresses
 
-  name = element(split(".", each.key), 0)
+  name = each.key #element(split(".", each.key), 0)
 
   resource_pool_id = var.resource_pool_id
   datastore_id     = var.datastore_id

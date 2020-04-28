@@ -10,7 +10,7 @@ data "ignition_file" "hostname" {
   mode       = "420"
 
   content {
-    content = element(split(".", each.key), 0)
+    content = each.key #element(split(".", each.key), 0)
   }
 }
 
