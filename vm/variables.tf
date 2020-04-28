@@ -56,7 +56,7 @@ variable "num_cpus" {
   type = string
 }
 
-variable "dns_addresses" {
-  type = list(string)
-}
+# variable "dns_addresses" {
+#   type = list(string)
+# }
 
