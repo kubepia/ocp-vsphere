@@ -60,7 +60,7 @@ module "compute" {
   datastore_id          = data.vsphere_datastore.datastore.id
   datacenter_id         = data.vsphere_datacenter.dc.id
   network_id            = data.vsphere_network.network.id
-  folder_id             = vsphere_folder.folder.path
+  folder_id             = var.cluster_id//vsphere_folder.folder.path
   guest_id              = data.vsphere_virtual_machine.template.guest_id
   template_uuid         = data.vsphere_virtual_machine.template.id
   disk_thin_provisioned = data.vsphere_virtual_machine.template.disks[0].thin_provisioned
