@@ -13,19 +13,19 @@ control_plane_count = 3
 compute_count = 0
 
 
-bootstrap_ignition_path="./append.ign"
-bootstrap_mac_address = ["00:50:56:be:01:32"]
-bootstrap_cpu=8
-bootstrap_mem=16384
+# bootstrap_ignition_path="./append.ign"
+# bootstrap_mac_address = ["00:50:56:be:01:32"]
+# bootstrap_cpu=8
+# bootstrap_mem=16384
 
-control_plane_ignition_path="./master.ign"
-control_plane_mac_address = ["00:50:56:be:07:88","00:50:56:be:c1:3b","00:50:56:be:17:ed"]
-control_plane_cpu=8
-control_plane_mem=16384
+# control_plane_ignition_path="./master.ign"
+# control_plane_mac_address = ["00:50:56:be:07:88","00:50:56:be:c1:3b","00:50:56:be:17:ed"]
+# control_plane_cpu=8
+# control_plane_mem=16384
 
-compute_ignition_path="./worker.ign"
-compute_mac_address = []
-# compute_mac_address = ["00:50:56:be:eb:5f","00:50:56:be:ca:5b","00:50:56:be:05:ac"]
+compute_ignition_path="../worker.ign"
+# compute_mac_address = []
+compute_mac_address = ["00:50:56:be:eb:5f","00:50:56:be:ca:5b","00:50:56:be:05:ac"]
 compute_cpu=8
 compute_mem=16384
 
