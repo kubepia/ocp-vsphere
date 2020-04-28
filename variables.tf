@@ -81,7 +81,7 @@ variable "bootstrap_complete" {
   default = "false"
 }
 
-variable "bootstrap_ip_address" {
+variable "bootstrap_mac_address" {
   type    = list(string)
   default = []
 }
@@ -97,6 +97,12 @@ variable "bootstrap_mem" {
 }
 
 // control_plane
+
+variable "control_plane_mac_address" {
+  type    = list(string)
+  default = []
+}
+
 variable "control_plane_cpu" {
   type    = number
   default = 8
@@ -111,8 +117,19 @@ variable "control_plane_ignition_path" {
   default = "./master.ign"
 }
 
+variable "control_plane_count" {
+  type    = number
+  default = 0
+}
+
+
 
 // compute node
+variable "compute_mac_address" {
+  type    = list(string)
+  default = []
+}
+
 variable "compute_cpu" {
   type    = number
   default = 8
@@ -125,5 +142,10 @@ variable "compute_mem" {
 variable "compute_ignition_path" {
   type    = string
   default = "./bootstrap.ign"
+}
+
+variable "compute_count" {
+  type    = number
+  default = 0
 }
 
