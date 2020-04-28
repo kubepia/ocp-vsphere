@@ -1,4 +1,4 @@
-cluster_id = "hcp.arumtech"
+cluster_id = "hcp.darumtech"
 cluster_domain = "hcp.darumtech.net"
 base_domain = "darumtech.net"
 vsphere_server = "192.168.0.70"
@@ -24,8 +24,8 @@ control_plane_cpu=8
 control_plane_mem=16384
 
 compute_ignition_path="./worker.ign"
-# compute_mac_address = []
-compute_mac_address = ["00:50:56:be:eb:5f","00:50:56:be:ca:5b","00:50:56:be:05:ac"]
+compute_mac_address = []
+# compute_mac_address = ["00:50:56:be:eb:5f","00:50:56:be:ca:5b","00:50:56:be:05:ac"]
 compute_cpu=8
 compute_mem=16384
 
