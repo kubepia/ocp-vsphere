@@ -1,7 +1,7 @@
 locals {
   bootstrap_fqdns     = ["bootstrap-0.${var.cluster_domain}"]
-  control_plane_fqdns = [for idx in range(var.control_plane_count) : "control-plane-${idx}.${var.cluster_domain}"]
-  compute_fqdns       = [for idx in range(var.compute_count) : "compute-${idx}.${var.cluster_domain}"]
+  control_plane_fqdns = [for idx in range(var.control_plane_count) : "master-${idx}.${var.cluster_domain}"]
+  compute_fqdns       = [for idx in range(var.compute_count) : "worker-${idx}.${var.cluster_domain}"]
 }
 
 provider "vsphere" {
