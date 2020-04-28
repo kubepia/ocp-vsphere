@@ -106,6 +106,10 @@ variable "control_plane_mem" {
   type    = number
   default = 16384
 }
+variable "control_plane_ignition_path" {
+  type    = string
+  default = "./master.ign"
+}
 
 
 // compute node
@@ -117,5 +121,9 @@ variable "compute_cpu" {
 variable "compute_mem" {
   type    = number
   default = 16384
+}
+variable "compute_ignition_path" {
+  type    = string
+  default = "./bootstrap.ign"
 }
 
