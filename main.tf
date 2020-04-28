@@ -69,7 +69,7 @@ module "bootstrap" {
   machine_cidr   = var.machine_cidr
 
   num_cpus      = var.bootstrap_cpu
-  memory        = var.bootstrap.mem
+  memory        = var.bootstrap_mem
 #   dns_addresses = var.vm_dns_addresses
 }
 
